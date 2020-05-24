@@ -38,11 +38,12 @@ def check_recommendations(runs, recs, test):
 
 def plot_comparison(algorithm_means):
     plt.bar(x=algorithm_means.index.values, height=list(algorithm_means))
+    plt.ylabel('NDCG mean')
     plt.show()
 
 def test_alogrithms():
-    data = MovieLens('ml-25m')
-    #data = ML1M('ml-1m')
+    # data = MovieLens('ml-latest-small')
+    data = ML1M('ml-1m')
     ratings = data.ratings
     print('Initial ratings table head:')
     print(ratings.head())
